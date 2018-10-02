@@ -406,18 +406,18 @@
             <p>
               [[E130:"[[E47:[[S334:fr_id]]:fr_info:1:event_schedule]]" " | " "<br>" replaceall]]
             </p>
-            <a class="button btn-secondary text-uppercase js__add-to-calendar" href="#" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-add-calendar']);">Add to Calendar</a>
+            <!--<a class="button btn-secondary text-uppercase js__add-to-calendar" href="#" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-add-calendar']);">Add to Calendar</a>-->
             <!-- https://www.addevent.com/add-to-calendar-button -->
 <!-- BEGIN add to calendar -->
 [[U0:thisEventDate=[[E47:[[S334:fr_id]]:fr_info:1:sponsor_1]]]] [[U0:parsedEventDate=[[E130:"[[S80:thisEventDate]]" dup dup "/" lastindexof 1 + swap length substring]][[E130:"[[S80:thisEventDate]]" dup 0 swap "/" indexof substring]][[E130:"[[S80:thisEventDate]]" dup dup "/" indexof 1 + swap "/" lastindexof substring]]]]
 <!-- S80 thisEventDate: xx[[S80:thisEventDate]]xx -->
 <!-- S80 parsedEventDate: xx[[S80:parsedEventDate]]xx -->
-        <div class="calendar-container js__calendar-menu" style="display: none;">
+        <!--<div class="calendar-container js__calendar-menu" style="display: none;">
             <p><a rel="nofollow" class="text-white" target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&amp;text=[[T1:[[S42:0:title]]]]&amp;dates=[[S80:parsedEventDate]]/[[S80:parsedEventDate]]&amp;details=Visit%20your%20Ride%20Hub%20for%20event%20schedule%20and%20more%20details%20at%20http%3A%2F%2Fwww.alz.org%2Fride.&amp;location=[[T1:[[E130:"[[E47:[[S334:fr_id]]:fr_info:1:event_schedule]]" " | " ", " replaceall]]]]&amp;trp=false&amp;sprop=&amp;sprop=name:">Google Calendar</a>
                 <br /> or
                 <br />
                 <a class="text-white" href="/site/PageServer?pagename=ride_ical&amp;fr_id=[[S42:0:fr-id]]&amp;pgwrap=n">Other Calendars</a></p>
-        </div>
+        </div>-->
 <!-- END add to calendar -->
           </div>
           <div class="col-md-4 col-lg-3">
@@ -441,10 +441,10 @@
               <br> [[E47:[[S334:fr_id]]:fr_info:1:event_location_city]],&nbsp;[[E47:[[S334:fr_id]]:fr_info:1:event_location_state]] [[E47:[[S334:fr_id]]:fr_info:1:sponsor_5]]
               -->
             </p>
-
+<!--
             [[?xxnullx::x[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]x::::
                         <a href="[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]" class="button btn-secondary text-uppercase" role="button" target="_blank" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-map']);">Map it</a>
-                        ]]
+                        ]]-->
 
           </div>
           <div class="col-md-4 col-lg-3">
@@ -460,9 +460,11 @@
               <br>
               <a href="mailto:[[E47:[[S334:fr_id]]:fr_info:1:coordinator_email]]">[[E47:[[S334:fr_id]]:fr_info:1:coordinator_email]]</a>
             </p>
-            <a class="button btn-secondary text-uppercase" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25339" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-event-info']);">More Event Info</a>
           </div>
           <div class="greeting-intro js__greeting-intro mt-4"></div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <a class="button btn-secondary text-uppercase" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25339" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-event-info']);">More Event Info</a>
         </div>
 
       </div>
