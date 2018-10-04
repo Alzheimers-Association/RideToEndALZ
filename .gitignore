@@ -51,3 +51,6 @@ dist/
 
 ### Sass ###
 images/
+
+### Ignore Temporary CSS ###
+app/assets/css/*.css
