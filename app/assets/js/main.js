@@ -442,19 +442,7 @@
         $('.js__retrieve-login-error-container').show();
       }
     });
-    $('.js__reg-retrieve-login-form').on('submit', function (e) {
-      e.preventDefault();
-      var form = $(this);
-      form.parsley().validate();
-      if (form.parsley().isValid()) {
-        var consEmail = $('#regRetrieveLoginEmail').val();
-        cd.consRetrieveLogin(consEmail, true);
-        cd.resetValidation();
-      } else {
-        $('.js__retrieve-login-error-message').html('Please fix the errors below.');
-        $('.js__retrieve-login-error-container').show();
-      }
-    });
+
     // show login retrieval form
     $('.js__show-retrieve-login').on('click', function (e) {
       e.preventDefault();
