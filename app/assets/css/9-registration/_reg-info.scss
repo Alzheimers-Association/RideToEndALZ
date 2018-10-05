@@ -84,9 +84,11 @@
     div#employment_information_container div#employer_container {
       margin-left: 0;
     }
-    div.sub-section-body,
-    div#reg_options_cons_info_extension div.sub-section-body {
+    div.sub-section-body {
       padding: 0;
+    }
+    div#reg_options_cons_info_extension div.sub-section-body {
+      display:none;
     }
     div.field-group-header,
     div.sub-section-header {
@@ -160,7 +162,6 @@ display:block !important;
     }
     div#cons_info_component_container,
     #cons_info_dob,
-    div#reg_options_cons_info_extension,
     div#participant_info_container,
     #emergency_contact_container,
     .survey-question-container,
