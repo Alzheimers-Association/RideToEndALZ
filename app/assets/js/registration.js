@@ -445,9 +445,6 @@
     if ($('#F2fRegPartType').length > 0) {
       // TR reg ptype step
 
-      // $('label[for="fr_anonymous_gift"]').text('You can show my donation amount on this website');
-      // $('label[for="fr_show_public_gift"]').text('I would like to make this donation private and not show my name on this website');
-
       // TODO - see if these won't work if applied via sass
       $('.part-type-container').addClass('custom-control').addClass('custom-radio');
       // Format {ul}{li} ptype description syntax into HTML
@@ -478,9 +475,18 @@ $('#fr_part_co_list_new').val('Enter a new company or organization');
       $('.donation-level-row-label-no-gift').text("No additional donation at this time").closest('.donation-level-row-container').addClass('don-no-gift col-md-12');
       $('.don-no-gift, #part_type_anonymous_input_container, #part_type_show_public_input_container, #part_type_individual_company_selection_container .input-container').wrap('<div class="form-check"/>');
 
-      $('label[for="fr_anonymous_gift"]').text('You can show my donation amount on this website');
-      $('#fr_show_public_gift').prop('checked', false);
-      $('label[for="fr_show_public_gift"]').text('Make this donation private and do not show my name on this website');
+      $('label[for="fr_anonymous_gift"]').text('Keep my name private');
+      $('#fr_show_public_gift').prop('checked', true).hide();
+      $('label[for="fr_show_public_gift"]').hide();
+      $('#part_type_show_public_input_container').prepend('<input type="checkbox" class="js__fake-show-gift" name="fake_show_gift" id="fake_show_gift"><label for="fake_show_gift">Keep my donation amount private</label>');
+
+      $('.js__fake-show-gift').on('click', function(e){
+        if($(this).is(':checked')){
+          $('#fr_show_public_gift').prop('checked', false);
+        } else {
+          $('#fr_show_public_gift').prop('checked', true);
+        }
+      });
 
       $('#suggested_goal_container').text('Riders have a required fundraising minimum. Stretch goals are encouraged!');
 
@@ -504,6 +510,23 @@ $('#fr_part_co_list_new').val('Enter a new company or organization');
         }
       });
 
+      if ($('.page-error').length > 0) {
+        console.log('page error');
+        var errorMsg = $('.field-error-text').eq(0).text();
+        if ($('.field-error-text:contains("minimum fundraising goal")').length > 0) {
+          console.log('min goal error');
+        
+          var errorMsgArray = errorMsg.split('$');
+          console.log('errorMsgArray: ', errorMsgArray);
+
+          $('#part_type_fundraising_goal_container .form-content')
+            .addClass('form-error')
+            .prepend('<div class="ErrorMessage"><span class="field-error-indicator"></span><span class="field-error-text">Error: Please enter a goal greater than your fundraising minimum of $' + errorMsgArray[1] + '</span></div>');
+        } 
+      } else {
+        console.log('no page error');
+      }
+      
       $('.donation-level-row-label').on('click', function (e) {
         $('.donation-level-row-label').removeClass('active');
         $('.other-amount-row-container input[type="text"]').val('');
@@ -570,9 +593,9 @@ $('#fr_part_co_list_new').val('Enter a new company or organization');
 
       $('#part_type_donation_level_input_container').wrapInner('<fieldset role="radiogroup" class="donation-form-fields" aria-labelledby="reg_donation_label"/>');
 
-$('.donation-level-row-label-no-gift').on('click', function(e){
-$('#fr_anonymous_gift, #fr_show_public_gift').prop('checked', false);
-});
+      // $('.donation-level-row-label-no-gift').on('click', function(e){
+      //   $('#fr_anonymous_gift, #fr_show_public_gift').prop('checked', false);
+      // });
 
     }
     if ($('#F2fRegContact').length > 0) {
@@ -594,8 +617,6 @@ $('#fr_anonymous_gift, #fr_show_public_gift').prop('checked', false);
 $('.input-label:contains("Riding alone?")').closest('.survey-question-container').addClass('js__riding-alone-container').css('display', 'none');
 
 $('.input-label:contains("Facebook Fundraiser ID")').closest('.survey-question-container').css('display', 'none');
-
-
 
       $('.input-label:contains("Mobile")').closest('.survey-question-container').addClass('mobile-question-container').removeClass('survey-question-container');
       $('.input-label:contains("text message")').closest('.survey-question-container').addClass('sms-question-container').removeClass('survey-question-container');
