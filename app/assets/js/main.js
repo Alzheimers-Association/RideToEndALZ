@@ -1403,7 +1403,7 @@
               $('#billing_addr_state_row').slideDown();
 
               // US Zip Code Records Officially Map to only 1 Primary Location
-              places = result['places'][0];
+              var places = result['places'][0];
               $("#billing_addr_cityname").val(places['place name']);
               $("#billing_addr_state").val(places['state abbreviation']);
               zip_box.addClass('success').removeClass('error');
