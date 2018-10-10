@@ -8658,7 +8658,7 @@ END CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
     showLoading();
   }
 
-  if(document.cookie.indexOf('pcVisits=1') > 0 && $('.js__registration-thank-you-dialog').length === 0) {
+  if(document.cookie.indexOf('pcVisits=1') > 0 && $('.js__registration-thank-you-dialog').length === 0 && $('.page-update-step').data('pageupdated') !== 'true') {
     walk.dialogOverlayOpen('#update-your-page-dialog');
     deleteCookie('pcVisits');
   }
@@ -9371,7 +9371,8 @@ $('.pc-navbar .navbar-collapse').collapse('hide');
   	
   	/* handle Next Steps when editing page */
     $('#edit-personal-photo-1-submit, #edit-personal-caption-submit, #edit-personal-page-save').click(function(){
-  		$('.editPageCompleted').removeClass('hidden');
+      $('.editPageCompleted').removeClass('hidden');
+      $('.page-update-step').data('pageupdated', 'true');
   		$('.editPageNotCompleted').hide();
   	});
       
