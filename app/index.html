@@ -321,15 +321,15 @@
             <p class="lead">100% of dollars raised for Ride to End ALZ support research efforts.</p>
             <div class="row d-flex justify-content-center">
               <div class="col-md-3">
-                <a class="button btn-secondary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'banner-register']);">REGISTER</a>
+                <a class="button btn-secondary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-register');">REGISTER</a>
               </div>
               <div class="col-md-3">
-                <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate" role="button" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'banner-donate']);">DONATE</a>
+                <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate" role="button" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-donate');">DONATE</a>
               </div>
             </div>
             <div class="hero-link-container row d-flex justify-content-center">
               <div class="col-md-3">
-                <a href="SPageServer/?pagename=ride_about" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'banner-learn-more']);">Learn More</a>
+                <a href="SPageServer/?pagename=ride_about" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-learn-more');">Learn More</a>
               </div>
             </div>
           </div>
@@ -394,7 +394,7 @@
                   <label class="sr-only" for="participantLastName">Last Name</label>
                   <div class="d-flex w-100">
                   <input id="participantLastName" type="text" class="col-md-5 form-control form-control-lg ml-lg-1 search-last-name flex-grow-1" placeholder="LAST NAME">
-                  <button type="submit" class="btn btn-lg btn-primary search-participant-button" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'find-participant']);">
+                  <button type="submit" class="btn btn-lg btn-primary search-participant-button" onClick="ga('send', 'event', 'ride landing', 'click', 'find-participant');">
                     <span class="sr-only">Search</span>
                     <i class="fas fa-search"></i>
                   </button>
@@ -409,7 +409,7 @@
               <div class="d-flex">
                 <label class="sr-only" for="teamName">Team Name</label>
                 <input type="text" class="form-control form-control-lg mb-2" id="teamName" placeholder="TEAM NAME">
-                <button type="submit" class="btn btn-lg btn-primary mb-2" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'find-team']);">
+                <button type="submit" class="btn btn-lg btn-primary mb-2" onClick="ga('send', 'event', 'ride landing', 'click', 'find-team');">
                   <span class="sr-only">Search</span>
                   <i class="fas fa-search"></i>
                 </button>
@@ -469,18 +469,18 @@
   <div class="stripe-overlay">
           <nav class="nav nav-tabs nav-justified border-0" id="nav-tab" role="tablist">
             <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center active" id="nav-rider-tab" data-toggle="tab"
-              href="#nav-rider" role="tab" aria-controls="nav-rider" aria-expanded="true" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'rider-tab']);">Rider</a>
+              href="#nav-rider" role="tab" aria-controls="nav-rider" aria-expanded="true" onClick="ga('send', 'event', 'ride landing', 'click', 'rider-tab');">Rider</a>
             <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center" id="nav-crew-tab" data-toggle="tab"
-              href="#nav-crew" role="tab" aria-controls="nav-crew" aria-expanded="false" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'crew-tab']);">Crew</a>
+              href="#nav-crew" role="tab" aria-controls="nav-crew" aria-expanded="false" onClick="ga('send', 'event', 'ride landing', 'click', 'crew-tab');">Crew</a>
             <a class="nav-item nav-link nav-item-volunteer text-uppercase d-flex align-items-center justify-content-center" id="nav-volunteer-tab"
-              data-toggle="tab" href="#nav-volunteer" role="tab" aria-controls="nav-volunteer" aria-expanded="false" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'volunteer-tab']);">Volunteer</a>
+              data-toggle="tab" href="#nav-volunteer" role="tab" aria-controls="nav-volunteer" aria-expanded="false" onClick="ga('send', 'event', 'ride landing', 'click', 'volunteer-tab');">Volunteer</a>
           </nav>
           <div class="tab-content text-center p-4" id="nav-tabContent">
             <div class="tab-pane  active show" id="nav-rider" role="tabpanel" aria-labelledby="nav-rider-tab" aria-expanded="true">
               <p>Show your commitment to end Alzheimer’s from your aerobars. Whether a casual cyclist or an avid enthusiast, this fully supported, one-day ride offers multiple route options. Select a distance that pushes you to perform your best, while raising funds and awareness to advance Alzheimer’s research.
               </p>
               <p>
-                <a class="text-uppercase" href="SPageServer/?pagename=ride_learn_more" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'rider-learn-more']);">Learn More
+                <a class="text-uppercase" href="SPageServer/?pagename=ride_learn_more" onClick="ga('send', 'event', 'ride landing', 'click', 'rider-learn-more');">Learn More
                   <i class="fas fa-caret-right"></i>
                 </a>
               </p>
@@ -489,7 +489,7 @@
               <p>
                   You don’t have to be on two wheels to be at the heart of the action!. From route marshalls to bike mechanics, our volunteer crew members make ride day a success.</p>
               <p>
-                <a class="text-uppercase" href="SPageServer/?pagename=ride_about" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'crew-learn-more']);">Learn More
+                <a class="text-uppercase" href="SPageServer/?pagename=ride_about" onClick="ga('send', 'event', 'ride landing', 'click', 'crew-learn-more');">Learn More
                   <i class="fas fa-caret-right"></i>
                 </a>
               </p>
@@ -497,7 +497,7 @@
             <div class="tab-pane" id="nav-volunteer" role="tabpanel" aria-labelledby="nav-volunteer-tab">
               <p>We need you! From planning ride day logistics to cheering on fast-peddling participants, it takes a special group of volunteers to make Bike to End ALZ happen.   </p>
               <p class="font-italic">
-                <a class="text-uppercase" href="SPageServer/?pagename=ride_about" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'volunteer-learn-more']);">Learn More
+                <a class="text-uppercase" href="SPageServer/?pagename=ride_about" onClick="ga('send', 'event', 'ride landing', 'click', 'volunteer-learn-more');">Learn More
                   <i class="fas fa-caret-right"></i>
                 </a>
               </p>
@@ -514,7 +514,7 @@
   
           <div class="row d-flex justify-content-center mb-4">
             <div class="col-lg-4 col-md-6 col-sm-8">
-              <a class="button btn-secondary btn-lg text-uppercase" href="SPageServer/?pagename=ride_survey" role="button" onClick="_gaq.push(['_trackEvent', 'ride landing', 'click', 'rfi']);">Request More Info</a>
+              <a class="button btn-secondary btn-lg text-uppercase" href="SPageServer/?pagename=ride_survey" role="button" onClick="ga('send', 'event', 'ride landing', 'click', 'rfi');">Request More Info</a>
             </div>
           </div>
         </div>

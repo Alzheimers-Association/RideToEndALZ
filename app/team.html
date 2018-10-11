@@ -325,11 +325,11 @@
 
             <div class="sidebar-buttons py-2">
               [[?x1x2x::x[[E42:[[S334:fr_id]]:status]]x::
-              <a href="TRR/?fr_tjoin=[[S334:team_id]]&amp;pg=tfind&amp;fr_id=[[S334:fr_id]]&amp;s_joinTeamID=[[S334:team_id]]" class="button btn-lg btn-primary btn-block" onClick="_gaq.push(['_trackEvent', 'ride team', 'click', 'join-team']);">JOIN OUR TEAM</a>
+              <a href="TRR/?fr_tjoin=[[S334:team_id]]&amp;pg=tfind&amp;fr_id=[[S334:fr_id]]&amp;s_joinTeamID=[[S334:team_id]]" class="button btn-lg btn-primary btn-block" onClick="ga('send', 'event', 'ride team', 'click', 'join-team');">JOIN OUR TEAM</a>
               ::]]
               [[?x2x3x::x[[E42:[[S334:fr_id]]:status]]x::
               <!-- TODO - polish scrolling behavior -->
-              <a href="[[S8]]#team_bottom" class="js__scroll-to-donate d-md-none button btn-lg btn-primary btn-block" onClick="_gaq.push(['_trackEvent', 'ride team', 'click', 'donate-anchor']);">DONATE
+              <a href="[[S8]]#team_bottom" class="js__scroll-to-donate d-md-none button btn-lg btn-primary btn-block" onClick="ga('send', 'event', 'ride team', 'click', 'donate-anchor');">DONATE
                 <i class="fas fa-arrow-down"></i>
               </a>
               ::]]
@@ -437,7 +437,7 @@
                       <span class="clear-search-icon js__clear-teammate-search" style="display:none;">
                           <a href="#">
                           <i class="fa fa-times-circle fa-2x"></i> <span class="sr-only">Clear Filters</span></a></span>  
-                    <button type="submit" class="btn btn-secondary btn-lg mb-2" onClick="_gaq.push(['_trackEvent', 'ride team', 'click', 'team-search']);">
+                    <button type="submit" class="btn btn-secondary btn-lg mb-2" onClick="ga('send', 'event', 'ride team', 'click', 'team-search');">
                       <span class="sr-only">Search</span>
                       <i class="fas fa-search"></i>
                     </button>

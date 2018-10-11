@@ -328,10 +328,10 @@
 
             <div class="sidebar-buttons py-2">
                 [[?x1x2x::x[[E42:[[S334:fr_id]]:status]]x::
-                [[?xx::x[[E48:[[S334:fr_id]]-[[S334:px]]:team-id]]x::::<a href="TRR/?pg=tfind&amp;fr_id=[[S334:fr_id]]&amp;fr_tjoin=[[E48:[[S334:fr_id]]-[[S334:px]]:team-id]]&amp;s_joinTeamID=[[S334:team_id]]" class="button btn-lg btn-primary btn-block" onClick="_gaq.push(['_trackEvent', 'ride personal', 'click', 'join-team']);">JOIN MY TEAM</a>]]
+                [[?xx::x[[E48:[[S334:fr_id]]-[[S334:px]]:team-id]]x::::<a href="TRR/?pg=tfind&amp;fr_id=[[S334:fr_id]]&amp;fr_tjoin=[[E48:[[S334:fr_id]]-[[S334:px]]:team-id]]&amp;s_joinTeamID=[[S334:team_id]]" class="button btn-lg btn-primary btn-block" onClick="ga('send', 'event', 'ride personal', 'click', 'join-team');">JOIN MY TEAM</a>]]
                 ::]]
                 [[?x2x3x::x[[E42:[[S334:fr_id]]:status]]x::
-              <a href="Donation2?df_id=[[E42:[[S334:fr_id]]:form-id]]&amp;PROXY_ID=[[S334:px]]&amp;PROXY_TYPE=20&amp;FR_ID=[[S334:fr_id]]" class=" d-md-none button btn-lg btn-primary btn-block" onClick="_gaq.push(['_trackEvent', 'ride personal', 'click', 'donate']);">DONATE</a>
+              <a href="Donation2?df_id=[[E42:[[S334:fr_id]]:form-id]]&amp;PROXY_ID=[[S334:px]]&amp;PROXY_TYPE=20&amp;FR_ID=[[S334:fr_id]]" class=" d-md-none button btn-lg btn-primary btn-block" onClick="ga('send', 'event', 'ride personal', 'click', 'donate');">DONATE</a>
               ::]]
 
         
@@ -453,7 +453,7 @@
                   </div>
                   [[?x2x3x::x[[E42:[[S334:fr_id]]:status]]x::
                   <div class="progress-donate-container col-12 col-md-6 offset-md-3 mt-2 text-center">
-                      <a href="Donation2?df_id=[[E42:[[S334:fr_id]]:form-id]]&amp;PROXY_ID=[[S334:px]]&amp;PROXY_TYPE=20&amp;FR_ID=[[S334:fr_id]]" class="button btn-primary btn-lg btn-block" onClick="_gaq.push(['_trackEvent', 'ride personal', 'click', 'donate-thermometer']);">DONATE</a>
+                      <a href="Donation2?df_id=[[E42:[[S334:fr_id]]:form-id]]&amp;PROXY_ID=[[S334:px]]&amp;PROXY_TYPE=20&amp;FR_ID=[[S334:fr_id]]" class="button btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'ride personal', 'click', 'donate-thermometer');">DONATE</a>
                     </div>
                     ::]]
                 </div>
@@ -474,7 +474,7 @@
                 <ul class="list-group list-group-flush text-primary">
                     <!-- <li class="list-group-item"><a href="#">See Full Donor List</a> <i class="fas fa-chevron-right fa-xs"></i></li> -->
                     [[?x2x3x::x[[E42:[[S334:fr_id]]:status]]x::
-                    <li class="list-group-item"><i class="far fa-file-pdf"></i> <a href="TRGiftForm?fr_id=[[S334:fr_id]]&amp;px=[[S334:px]]" target="_blank" onClick="_gaq.push(['_trackEvent', 'ride personal', 'click', 'donate-offline']);">Donate via Mail</a> <i class="fas fa-chevron-right fa-xs"></i></li>
+                    <li class="list-group-item"><i class="far fa-file-pdf"></i> <a href="TRGiftForm?fr_id=[[S334:fr_id]]&amp;px=[[S334:px]]" target="_blank" onClick="ga('send', 'event', 'ride personal', 'click', 'donate-offline');">Donate via Mail</a> <i class="fas fa-chevron-right fa-xs"></i></li>
                     ::]]
                   </ul>
               </div>

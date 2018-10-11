@@ -293,31 +293,31 @@
           <div class="col-md-3">
               [[?xx::x[[S1:user_name]]x::
               [[?x1x2x::x[[S42:0:status]]x::
-              <a class="button btn-secondary btn-lg btn-block" href="TRR/pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-register']);">REGISTER</a>
+              <a class="button btn-secondary btn-lg btn-block" href="TRR/pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">REGISTER</a>
               ::]]
             ::
               [[?xx::x[[S48:0:part-type-id]]x::
-                <a class="button btn-secondary btn-lg btn-block" href="TRR/pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-register']);">REGISTER</a>
+                <a class="button btn-secondary btn-lg btn-block" href="TRR/pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">REGISTER</a>
               ::
-                <a class="button btn-secondary btn-lg btn-block menu-btn" href="TRC/?pg=center&amp;fr_id=[[S334:fr_id]]"  onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-ride-hub']);">RIDE HUB</a>
+                <a class="button btn-secondary btn-lg btn-block menu-btn" href="TRC/?pg=center&amp;fr_id=[[S334:fr_id]]"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-hub');">RIDE HUB</a>
               ]]
             ]]
           </div>
           <div class="col-md-3">
             [[?x2x3x::x[[S42:0:status]]x::
-            <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-donate']);">DONATE</a>
+            <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-donate');">DONATE</a>
             ::]]
           </div>
         </div>
         <div class="hero-link-container row d-flex justify-content-center">
             <div class="col-md-3">
                 [[?xx::x[[S1:user_name]]x::
-                <a href="#ride_details"  onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-ride-details']);">Ride Details</a>
+                <a href="#ride_details"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-details');">Ride Details</a>
                 ::
                   [[?xx::x[[S48:0:part-type-id]]x::
-                  <a href="#ride_details"  onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-ride-details']);">Ride Details</a>
+                  <a href="#ride_details"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-details');">Ride Details</a>
                   ::
-                  <a href="#" data-toggle="modal" data-target="#registerModal" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-register']);">Register for a Different Ride</a>
+                  <a href="#" data-toggle="modal" data-target="#registerModal" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">Register for a Different Ride</a>
                   ]]
                 ]]
             </div>
@@ -406,7 +406,7 @@
             <p>
               [[E130:"[[E47:[[S334:fr_id]]:fr_info:1:event_schedule]]" " | " "<br>" replaceall]]
             </p>
-            <!--<a class="button btn-secondary text-uppercase js__add-to-calendar" href="#" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-add-calendar']);">Add to Calendar</a>-->
+            <!--<a class="button btn-secondary text-uppercase js__add-to-calendar" href="#" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-add-calendar');">Add to Calendar</a>-->
             <!-- https://www.addevent.com/add-to-calendar-button -->
 <!-- BEGIN add to calendar -->
 [[U0:thisEventDate=[[E47:[[S334:fr_id]]:fr_info:1:sponsor_1]]]] [[U0:parsedEventDate=[[E130:"[[S80:thisEventDate]]" dup dup "/" lastindexof 1 + swap length substring]][[E130:"[[S80:thisEventDate]]" dup 0 swap "/" indexof substring]][[E130:"[[S80:thisEventDate]]" dup dup "/" indexof 1 + swap "/" lastindexof substring]]]]
@@ -443,7 +443,7 @@
             </p>
 <!--
             [[?xxnullx::x[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]x::::
-                        <a href="[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]" class="button btn-secondary text-uppercase" role="button" target="_blank" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-map']);">Map it</a>
+                        <a href="[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]" class="button btn-secondary text-uppercase" role="button" target="_blank" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-map');">Map it</a>
                         ]]-->
 
           </div>
@@ -464,7 +464,7 @@
           <div class="greeting-intro js__greeting-intro mt-4"></div>
         </div>
         <div class="row justify-content-center mt-3">
-          <a class="button btn-secondary text-uppercase" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25339" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-event-info']);">More Event Info</a>
+          <a class="button btn-secondary text-uppercase" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25339" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">More Event Info</a>
         </div>
 
       </div>
@@ -487,7 +487,7 @@
                 <label class="sr-only" for="participantLastName">Last Name</label>
                 <div class="d-flex w-100">
                 <input id="participantLastName" type="text" class="col-md-5 last-name-input form-control form-control-lg flex-grow-1 search-last-name" placeholder="LAST NAME" >
-                <button type="submit" class="btn btn-secondary btn-lg" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'find-participant']);">
+                <button type="submit" class="btn btn-secondary btn-lg" onClick="ga('send', 'event', 'ride greeting', 'click', 'find-participant');">
                   <span class="sr-only">Search</span>
                   <i class="fas fa-search"></i>
                 </button>
@@ -504,7 +504,7 @@
               <div class="d-flex">
                 <label class="sr-only" for="teamName">Team Name</label>
                 <input type="text" class="col-md-9 col-lg-10 form-control form-control-lg mb-2" id="teamName" placeholder="TEAM NAME">
-                <button type="submit" class="btn btn-secondary btn-lg mb-2" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'find-team']);">
+                <button type="submit" class="btn btn-secondary btn-lg mb-2" onClick="ga('send', 'event', 'ride greeting', 'click', 'find-team');">
                   <span class="sr-only">Search</span>
                   <i class="fas fa-search"></i>
                 </button>
@@ -523,7 +523,7 @@
               <div class="d-flex">
                 <label class="sr-only" for="companyName">Company Name</label>
                 <input type="text" class="col-md-9 col-lg-10 form-control form-control-lg mb-2" id="companyName" placeholder="COMPANY NAME">
-                <button type="submit" class="btn btn-secondary btn-lg mb-2" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'find-company']);">
+                <button type="submit" class="btn btn-secondary btn-lg mb-2" onClick="ga('send', 'event', 'ride greeting', 'click', 'find-company');">
                   <span class="sr-only">Search</span>
                   <i class="fas fa-search"></i>
                 </button>

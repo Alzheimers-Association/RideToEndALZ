@@ -344,10 +344,10 @@
         [[?x1x2x::x[[E42:[[S334:fr_id]]:status]]x::
         <div class="row my-2">
           <div class="col-md-4 offset-md-2">
-            <a href="TRR/?pg=tfind&amp;fr_id=[[S334:fr_id]]&amp;fr_tm_opt=new&amp;skip_login_page=true&amp;co_start_team=[[S334:company_id]]" class="button btn-lg btn-primary btn-block" onClick="_gaq.push(['_trackEvent', 'ride company', 'click', 'start-team']);">START A TEAM</a>
+            <a href="TRR/?pg=tfind&amp;fr_id=[[S334:fr_id]]&amp;fr_tm_opt=new&amp;skip_login_page=true&amp;co_start_team=[[S334:company_id]]" class="button btn-lg btn-primary btn-block" onClick="ga('send', 'event', 'ride company', 'click', 'start-team');">START A TEAM</a>
           </div>
           <div class="col-md-4">
-            <a href="[[S8]]#teamsHeading" class="button btn-lg btn-primary btn-block" onClick="_gaq.push(['_trackEvent', 'ride company', 'click', 'join-team']);">JOIN A TEAM
+            <a href="[[S8]]#teamsHeading" class="button btn-lg btn-primary btn-block" onClick="ga('send', 'event', 'ride company', 'click', 'join-team');">JOIN A TEAM
             </a>
           </div>
         </div>
@@ -469,7 +469,7 @@
               <div id="collapseTeams" class="collapse" aria-labelledby="teamsHeading" data-parent="#topTeams">
                 <div id="roster_results" class="results-table py-4 js__roster-results-container"></div>
                 <span class="view-all-link text-primary font-italic">
-                    <a href="TR?company_id=[[S334:company_id]]&amp;pg=natl_co_teams&amp;pgwrap=12165" onClick="_gaq.push(['_trackEvent', 'ride company', 'click', 'top-teams-view-all']);">View All Teams</a>
+                    <a href="TR?company_id=[[S334:company_id]]&amp;pg=natl_co_teams&amp;pgwrap=12165" onClick="ga('send', 'event', 'ride company', 'click', 'top-teams-view-all');">View All Teams</a>
                     <i class="fas fa-chevron-right fa-xs"></i>
                   </span>
               </div>
@@ -495,7 +495,7 @@
     <div id="collapseParticipants" class="collapse" aria-labelledby="teamsHeading" data-parent="#topParticipants">
         <div id="roster_results" class="results-table py-4 js__participants-roster-results-container"></div>
           <span class="view-all-link text-primary font-italic">
-              <a href="TR?company_id=[[S334:company_id]]&amp;pg=natl_co_parts&amp;pgwrap=12165" onClick="_gaq.push(['_trackEvent', 'ride company', 'click', 'top-participants-view-all']);">View All Participants</a>
+              <a href="TR?company_id=[[S334:company_id]]&amp;pg=natl_co_parts&amp;pgwrap=12165" onClick="ga('send', 'event', 'ride company', 'click', 'top-participants-view-all');">View All Participants</a>
               <i class="fas fa-chevron-right fa-xs"></i>
             </span>
         </div>

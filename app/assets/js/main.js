@@ -248,31 +248,31 @@
             if ($('.js__has-events').length > 0) {
               // add event tracking to side nav if events exist
               $('.js__side-eventname').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-greeting']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-greeting');
               });
               $('.js__side-dashboard').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-dashboard']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-dashboard');
               });
               $('.js__side-mypage').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-my-page']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-my-page');
               });
               $('.js__side-myteam').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-team-page']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-team-page');
               });
               $('.js__side-social').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-social']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-social');
               });
               $('.js__side-email').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-email']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-email');
               });
               $('.js__side-resources').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-resources']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-resources');
               });
               $('.js__side-community').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-community']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-community');
               });
               $('.js__side-notifications').on('click', function (e) {
-                _gaq.push(['_trackEvent', 'top navigation', 'click', 'nav-utility-slide-notifications']);
+                ga('send', 'event', 'top navigation', 'click', 'nav-utility-slide-notifications');
               });
             }
 
@@ -1169,11 +1169,11 @@
 
       // add event tracking to team roster list
       $('.js__teammate-name').on('click', function (e) {
-        _gaq.push(['_trackEvent', 'ride team', 'click', 'team-roster-name']);
+        ga('send', 'event', 'ride team', 'click', 'team-roster-name');
       });
 
       $('.js__teammate-donate').on('click', function (e) {
-        _gaq.push(['_trackEvent', 'ride team', 'click', 'team-roster-donate']);
+        ga('send', 'event', 'ride team', 'click', 'team-roster-donate');
       });
 
 
@@ -1238,7 +1238,7 @@
       $('.js__coordinator-email-container').html('<a href="mailto:' + coordinatorEmail + '">' + coordinatorEmail + '</a>');
 
       jQuery('.js__coordinator-email-container a').on('click', function () {
-        _gaq.push(['_trackEvent', 'ride company', 'click', 'contact-email']);
+        ga('send', 'event', 'ride company', 'click', 'contact-email');
       });
 
       var companyTeams = $('.company-team-list');
@@ -1288,19 +1288,19 @@
 
       // add event tracking to top teams and top participants lists
       $('.js__top-teams-name').on('click', function (e) {
-        _gaq.push(['_trackEvent', 'ride company', 'click', 'top-teams-name']);
+        ga('send', 'event', 'ride company', 'click', 'top-teams-name');
       });
 
       $('.js__top-teams-join').on('click', function (e) {
-        _gaq.push(['_trackEvent', 'ride company', 'click', 'top-teams-join']);
+        ga('send', 'event', 'ride company', 'click', 'top-teams-join');
       });
 
       $('.js__top-participants-name').on('click', function (e) {
-        _gaq.push(['_trackEvent', 'ride company', 'click', 'top-participants-name']);
+        ga('send', 'event', 'ride company', 'click', 'top-participants-name');
       });
 
       $('.js__top-participants-donate').on('click', function (e) {
-        _gaq.push(['_trackEvent', 'ride company', 'click', 'top-participants-donate']);
+        ga('send', 'event', 'ride company', 'click', 'top-participants-donate');
       });
 
       cd.runThermometer(companyRaised, companyGoal);
