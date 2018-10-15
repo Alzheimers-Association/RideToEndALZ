@@ -175,7 +175,7 @@
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-social" href="SPageServer?pagename=ridepc&pc2_page=pc-social&fr_id=' + trId + '">Social</a></li>' +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-email" href="SPageServer?pagename=ridepc&pc2_page=pc-email&fr_id=' + trId + '">Email</a></li>' +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-resources" href="SPageServer?pagename=ridepc&pc2_page=resources&fr_id=' + trId + '">Resources</a></li>' +
-                    '<li class="nav-item pushy-link"><a class="nav-link js__side-community" href="http://alzride.smallworldlabs.com/dashboard">Community</a></li>' +
+                    '<li class="nav-item pushy-link"><a class="nav-link js__side-community" href="http://alzride.smallworldlabs.com/dashboard" target="_blank">Community</a></li>' +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-notifications" href="SPageServer?pagename=ridepc&pc2_page=pc-notifications&fr_id=' + trId + '">Notifications</a></li></ul>' +
                     '</div>' +
                     '</div>' +
@@ -236,7 +236,7 @@
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-social" href="SPageServer?pagename=ridepc&pc2_page=pc-social&fr_id=' + trId + '">Social</a></li>' +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-email" href="SPageServer?pagename=ridepc&pc2_page=pc-email&fr_id=' + trId + '">Email</a></li>' +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-resources" href="SPageServer?pagename=ridepc&pc2_page=resources&fr_id=' + trId + '">Resources</a></li>' +
-                '<li class="nav-item pushy-link"><a class="nav-link js__side-community" href="http://alzride.smallworldlabs.com/dashboard">Community</a></li>' +
+                '<li class="nav-item pushy-link"><a class="nav-link js__side-community" href="http://alzride.smallworldlabs.com/dashboard" target="_blank">Community</a></li>' +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-notifications" href="SPageServer?pagename=ridepc&pc2_page=pc-notifications&fr_id=' + trId + '">Notifications</a></li></ul>' +
                 '</div>' +
                 '</div><hr>' +
