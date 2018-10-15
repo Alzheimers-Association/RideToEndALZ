@@ -130,6 +130,7 @@
               console.log('registered for more than 1 event');
               
               var totalTeamRaisers = 0;
+              var hasClosedEvents = false;
               var teamRaiserList = '';
 
               $(teamraisers).each(function (i) {
@@ -180,10 +181,12 @@
                     '</div>' +
                     '</div><hr>' +
                     '</div>';
+                } else {
+                  hasClosedEvents = true;
                 }
               });
               // manage case where someone is registered for more than 1 historic Ride but only 1 active Ride
-              if(totalTeamRaisers > 1){
+              if(hasClosedEvents === true){
                 $('.js__has-events').attr('id', 'eventsAccordion').wrapInner("<div class='multiple-events'></div>");
                 $('.multiple-events').append(teamRaiserList);
               } else {
