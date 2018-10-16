@@ -174,6 +174,7 @@
                     (teamPageUrl ? '<li class="nav-item pushy-link"><a class="nav-link js__side-myteam" href="' + teamPageUrl + '">My Team</a></li>' : '') +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-social" href="SPageServer?pagename=ridepc&pc2_page=pc-social&fr_id=' + trId + '">Social</a></li>' +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-email" href="SPageServer?pagename=ridepc&pc2_page=pc-email&fr_id=' + trId + '">Email</a></li>' +
+                    '<li class="nav-item pushy-link"><a class="nav-link js__side-progress" href="SPageServer?pagename=ridepc&pc2_page=pc-donors&fr_id=' + trId + '">Progress</a></li>' +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-resources" href="SPageServer?pagename=ridepc&pc2_page=resources&fr_id=' + trId + '">Resources</a></li>' +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-community" href="http://alzride.smallworldlabs.com/dashboard" target="_blank">Community</a></li>' +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-notifications" href="SPageServer?pagename=ridepc&pc2_page=pc-notifications&fr_id=' + trId + '">Notifications</a></li></ul>' +
@@ -235,6 +236,7 @@
                 (teamPageUrl ? '<li class="nav-item pushy-link"><a class="nav-link js__side-myteam" href="' + teamPageUrl + '">My Team</a></li>' : '') +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-social" href="SPageServer?pagename=ridepc&pc2_page=pc-social&fr_id=' + trId + '">Social</a></li>' +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-email" href="SPageServer?pagename=ridepc&pc2_page=pc-email&fr_id=' + trId + '">Email</a></li>' +
+                '<li class="nav-item pushy-link"><a class="nav-link js__side-progress" href="SPageServer?pagename=ridepc&pc2_page=pc-donors&fr_id=' + trId + '">Progress</a></li>' +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-resources" href="SPageServer?pagename=ridepc&pc2_page=resources&fr_id=' + trId + '">Resources</a></li>' +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-community" href="http://alzride.smallworldlabs.com/dashboard" target="_blank">Community</a></li>' +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-notifications" href="SPageServer?pagename=ridepc&pc2_page=pc-notifications&fr_id=' + trId + '">Notifications</a></li></ul>' +
@@ -563,8 +565,11 @@
           },
           error: function (response) {
             $('.js__loading').hide();
-
-            $('.js__error-participant-search').text(response.errorResponse.message).show();
+            if(response.errorResponse.code === '2664'){
+              $('.js__error-participant-search').text('You must enter at least 3 characters to search by participant first and last name.').show();
+            } else {
+              $('.js__error-participant-search').text(response.errorResponse.message).show();
+            }
           }
         }
       });
@@ -687,8 +692,11 @@
           },
           error: function (response) {
             $('.js__loading').hide();
-
-            $('.js__error-team-search').text(response.errorResponse.message).show();
+            if(response.errorResponse.code === '2664'){
+              $('.js__error-company-search').text('You must enter at least 3 characters to search by company name.').show();
+            } else {
+              $('.js__error-company-search').text(response.errorResponse.message).show();
+            }
 
           }
         }
