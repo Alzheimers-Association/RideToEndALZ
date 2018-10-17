@@ -281,6 +281,7 @@
     
       #part_type_section_footer {
         @extend .row;
+        @extend .mx-0;
       }
 }
 div#part_type_fundraising_goal_container #suggested_goal_container {

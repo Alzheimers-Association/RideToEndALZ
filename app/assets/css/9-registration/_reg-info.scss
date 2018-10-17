@@ -6,8 +6,9 @@
   div.registration-page-container {
     #F2fRegContact {
       margin: 0 auto;
-      .section-footer {
+      .sectdter {
         @extend .row;
+        @extend .mx-0;
       }
       .reg-interest-container {
       div.form-content {

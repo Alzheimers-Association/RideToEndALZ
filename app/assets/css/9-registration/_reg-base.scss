@@ -148,11 +148,12 @@ h2.reg-sub-headline {
   }
   div.responsive div.form-content {
     // margin-bottom: 0;
-    margin-right: 0;
     @extend .form-group;
+    @extend .mx-0;
   }
   div.registration-page-container div.section-footer {
     clear: both;
+    margin-right:0;
     @extend .d-flex; // @extend .row;
   }
   .header-container {
