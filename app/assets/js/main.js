@@ -7,12 +7,6 @@
     /*************/
     window.cd = {};
 
-    $('ul.navbar-nav li.dropdown').hover(function () {
-      $(this).find('.dropdown-menu').stop(true, true).fadeIn(150);
-    }, function () {
-      $(this).find('.dropdown-menu').stop(true, true).fadeOut(150);
-    });
-
     $('.menu-btn').on('click', function (e) {
       e.preventDefault();
     });
@@ -31,6 +25,16 @@
     if(pageHeight > 1080 && pageWidth > 992){
       $('#back_to_top').removeClass('d-md-none');
     }
+
+    if(pageWidth > 991){
+      // Add dropdown hover effect for non-mobile menu
+      $('ul.navbar-nav li.dropdown').hover(function () {
+        $(this).find('.dropdown-menu').stop(true, true).fadeIn(150);
+      }, function () {
+        $(this).find('.dropdown-menu').stop(true, true).fadeOut(150);
+      });
+    }
+    
     var sessionTRID = "";
     var trIDs = [];
     if (luminateExtend.global.auth.token == null) {
