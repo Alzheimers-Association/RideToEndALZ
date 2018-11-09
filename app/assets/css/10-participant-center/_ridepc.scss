@@ -1,5 +1,11 @@
 /* Ride PC Styles -------------------- */
-
+.view-container a {
+  text-decoration:underline;
+}
+.view-container a.button,
+.view-container .nav-tabs a {
+  text-decoration:none;
+}
 // hide radio buttons when used in btn group toggle
 [data-toggle=buttons]>.btn>input[type=radio], [data-toggle=buttons]>.btn>input[type=checkbox] {
   display: none;

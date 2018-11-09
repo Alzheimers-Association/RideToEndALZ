@@ -8,8 +8,9 @@
       -webkit-border-radius: 50%;
       margin-left: 0.25rem;
       margin-right: 0.25rem;
+      color:#fff !important;
       &:hover{
-        color:#fff;
+        color:#fff !important;
       }
     }
     svg {

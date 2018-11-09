@@ -112,29 +112,17 @@ p {
 .app_id_23 {
   .content {
     h1 {
-      color: $body-color; // border-bottom: 1px solid #ccc;
-      // margin-bottom: 1.5rem;
-    } // h2 {
-    //   color: $secondary;
-    //   font-size: 2rem;
-    //   font-weight:bold;
-    // }
+      color: $body-color;
+    } 
     h4 {
       text-transform: uppercase;
-    } // @include media-breakpoint-up(md) {
-    //   p {
-    //     font-size: 1.4rem;
-    //   }
-    //   .interior-header {
-    //     height:30px;
-    //   }
-    // }
+    } 
     p, ul, ol, li {
       font-size: 1.375rem; 
     }
     a,
     a:link {
-      &:not(.btn):not(.button){
+      &:not(.btn):not(.button){ 
         color:$secondary;
         text-decoration:underline;
       }
@@ -149,6 +137,15 @@ p {
     .interior-header {
       display:none;
     }
+    }
+    .pc__content {
+      a,
+      a:link {
+        &:not(.btn):not(.button){
+          color:$secondary;
+          // text-decoration:underline;
+        }
+      }
     }
 }
 

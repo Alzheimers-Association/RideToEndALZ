@@ -6818,7 +6818,7 @@ a.btn-log-in { -webkit-box-sizing: content-box; -moz-box-sizing: content-box; bo
 .pc__header-share a {
   background-color: $white;
   border-radius: 15px;
-  color: $primary;
+  color: $primary !important;
   display: inline-block;
   height: 30px;
   padding: 0;

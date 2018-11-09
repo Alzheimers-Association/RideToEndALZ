@@ -509,4 +509,7 @@
 
   #back_to_top {
     clear:both;
+    a {
+      color:$primary;
+    }
   }
