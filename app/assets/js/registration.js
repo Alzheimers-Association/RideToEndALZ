@@ -727,6 +727,8 @@ $('#F2fRegContact').parsley(parsleyOptions);
       if($('.guidelines-question-container input[type="radio"]').prop('checked') === true) {
         guidelinesChecked = true;
         $('.js__guidelines-checkbox').prop('checked', true);
+      } else if(!$('.guidelines-check').length > 0){
+        guidelinesChecked = true;
       } else {
         guidelinesChecked = false;
       }
