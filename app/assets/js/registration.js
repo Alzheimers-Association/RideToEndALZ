@@ -723,6 +723,24 @@ $('#F2fRegContact').parsley(parsleyOptions);
         }
       }
 
+      // auto check guidelines and terms on error reload if previously checked
+      if($('.guidelines-question-container input[type="radio"]').prop('checked') === true) {
+        guidelinesChecked = true;
+        $('.js__guidelines-checkbox').prop('checked', true);
+      } else {
+        guidelinesChecked = false;
+      }
+
+      if($('.terms-question-container input[type="radio"]').prop('checked') === true) {
+        termsChecked = true;
+        $('.js__waiver-checkbox').prop('checked', true);
+      } else {
+        termsChecked = false;
+      }
+
+      if (guidelinesChecked === true && termsChecked === true) {
+        $('#next_step').attr('disabled', false);
+      }
 
       // accessibliity updates
       $('#cons_birth_date_DAY').before('<label class="sr-only" for="cons_birth_date_DAY">Birth Day</label>');
