@@ -8064,7 +8064,15 @@ var photoEditor, dtContacts;
 
                 }
               }
+              if(surveyKey === 'ride_honoree') {
+                if(!$.isEmptyObject(responseValue) && (responseValue != '')) {
+                  // $('#edit-honorary').val(responseValue);
+                  $('.js__honoree-field').val(responseValue).attr('name', surveyQuestionName).closest('label');
+                  $('.js__honoree-field').prev('label').attr('for', surveyQuestionName);
 
+                  $('.js__honoree-answer').html(responseValue);
+                }
+              }
               if(surveyKey === 'tshirt_size') {
                 if(!$.isEmptyObject(responseValue) && (responseValue != '')) {
                   $('.js__tshirt-size-field').attr('name', surveyQuestionName);
@@ -8167,14 +8175,14 @@ var photoEditor, dtContacts;
                 }
               }
 
-              if(surveyResponse.questionText === 'I am participating to honor') {
-                $('#edit-honorary').data('questionid', questionId);
+              // if(surveyResponse.questionText === 'I am participating to honor') {
+              //   $('#edit-honorary').data('questionid', questionId);
                 
-                if(!$.isEmptyObject(responseValue) && (responseValue != '')) {
-                  $('#edit-honorary').val(responseValue);
-                  $('.honoraryName').html(responseValue);
-                }
-              }
+              //   if(!$.isEmptyObject(responseValue) && (responseValue != '')) {
+              //     $('#edit-honorary').val(responseValue);
+              //     $('.honoraryName').html(responseValue);
+              //   }
+              // }
               if(surveyResponse.questionText === 'Name in personal video') {
                 $('#edit-video-name').data('questionid', questionId);
                 
@@ -12157,6 +12165,7 @@ $('.js__cancel-reg-update-btn').on('click', function(e){
 
     var hasMobilePhone = $('.js__mobile-phone-field').val();
     var hasAlzConnection = $('.js__alz-connection-field').val();
+    var hasHonoree = ($('.js__honoree-field').val().length ? $('.js__honoree-field').val() : 'User Provided No Response');
     var hasTshirtSize = $('.js__tshirt-size-field').val();
     var hasRideRoute = $('.js__ride-route-field').val();
     var hasIsVegetarian = $('.js__is-vegetarian-field input:checked').val();
@@ -12167,7 +12176,7 @@ $('.js__cancel-reg-update-btn').on('click', function(e){
       var surveyResponse = this, 
       surveyKey = surveyResponse.key || '';
       // console.log('surveyKey: ', surveyKey);
-      if(surveyKey !== 'mobile_phone' && surveyKey !== 'alz_connection' && surveyKey !== 'tshirt_size' && surveyKey !== 'ride_route' && surveyKey !== 'is_vegetarian' && surveyKey !== 'crew_interests' && surveyKey !== 'volunteer_interests') {
+      if(surveyKey !== 'mobile_phone' && surveyKey !== 'ride_honoree' && surveyKey !== 'alz_connection' && surveyKey !== 'tshirt_size' && surveyKey !== 'ride_route' && surveyKey !== 'is_vegetarian' && surveyKey !== 'crew_interests' && surveyKey !== 'volunteer_interests') {
         var responseValue = this.responseValue;
         if(typeof responseValue != 'string' || responseValue === 'User Provided No Response') {
           responseValue = '';
@@ -12180,7 +12189,7 @@ $('.js__cancel-reg-update-btn').on('click', function(e){
 
     adarda.updateSurveyResponses({
       frId: adarda.trpc.frId,
-      data: surveyQuestions + (hasMobilePhone ? '&question_key_mobile_phone=' + encodeURIComponent(hasMobilePhone) : '')  + (hasAlzConnection ? '&question_key_alz_connection=' + encodeURIComponent(hasAlzConnection) : '')  + (hasTshirtSize ? '&question_key_tshirt_size=' + encodeURIComponent(hasTshirtSize) : '')  + (hasRideRoute ? '&question_key_ride_route=' + encodeURIComponent(hasRideRoute) : '')  + (hasIsVegetarian  ? '&question_key_is_vegetarian=' + encodeURIComponent(hasIsVegetarian) : '') + (hasVolunteerPosition  ? '&question_key_volunteer_interests=' + encodeURIComponent(hasVolunteerPosition) : '') + (hasCrewPosition  ? '&question_key_crew_interests=' + encodeURIComponent(hasCrewPosition) : ''), 
+      data: surveyQuestions + (hasMobilePhone ? '&question_key_mobile_phone=' + encodeURIComponent(hasMobilePhone) : '')  + (hasAlzConnection ? '&question_key_alz_connection=' + encodeURIComponent(hasAlzConnection) : '') + (hasHonoree ? '&question_key_ride_honoree=' + encodeURIComponent(hasHonoree) : '') + (hasTshirtSize ? '&question_key_tshirt_size=' + encodeURIComponent(hasTshirtSize) : '')  + (hasRideRoute ? '&question_key_ride_route=' + encodeURIComponent(hasRideRoute) : '')  + (hasIsVegetarian  ? '&question_key_is_vegetarian=' + encodeURIComponent(hasIsVegetarian) : '') + (hasVolunteerPosition  ? '&question_key_volunteer_interests=' + encodeURIComponent(hasVolunteerPosition) : '') + (hasCrewPosition  ? '&question_key_crew_interests=' + encodeURIComponent(hasCrewPosition) : ''), 
       callback: {
         success: function(response) {
           if(response.updateSurveyResponsesResponse.success == 'false') {
@@ -12189,9 +12198,10 @@ $('.js__cancel-reg-update-btn').on('click', function(e){
           }
           else {
             console.log('survey update success: ', response.updateSurveyResponsesResponse);
-
+  console.log('hasHonoree: ', hasHonoree);
             $('.js__mobile-phone-answer').html(hasMobilePhone);
             $('.js__alz-connection-answer').html(hasAlzConnection);
+            $('.js__honoree-answer').html((hasHonoree === 'User Provided No Response' ? '' : hasHonoree));
             $('.js__tshirt-size-answer').html(hasTshirtSize);
 
             // RIDER ONLY QUESTIONS

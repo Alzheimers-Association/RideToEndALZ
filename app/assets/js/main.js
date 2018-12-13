@@ -1042,21 +1042,24 @@
 
       cd.loadTopParticipantsRoster = function () {
 
-        $('#frStatus4 .indicator-list-row').each(function () {
-          var url = $(this).find('.team-honor-list-name a').attr('href');
-          var name = $(this).find('.team-honor-list-name a').text();
-          var amount = $(this).find('.team-honor-list-value').text();
-          var participantData = '<li class="list-group-item"><a class="roster-name" href="' + url +
-            '">' + name + '</a><span class="roster-amt">' +
-            amount + '</span></li>';
-          if (url !== undefined) {
-            $('.js__top-participants-list').append(participantData);
+        $('#frStatus4 .indicator-list-row').each(function (i) {
+          if(i < 5){
+            var url = $(this).find('.team-honor-list-name a').attr('href');
+            var name = $(this).find('.team-honor-list-name a').text();
+            var amount = $(this).find('.team-honor-list-value').text();
+            var participantData = '<li class="list-group-item"><a class="roster-name" href="' + url +
+              '">' + name + '</a><span class="roster-amt">' +
+              amount + '</span></li>';
+            if (url !== undefined) {
+              $('.js__top-participants-list').append(participantData);
+            }
           }
-        });
 
+        });
       } // end loadTopParticipantsRoster
 
-      cd.loadTopTeamsRoster = function () {
+      cd.loadTopTeamsRoster = function (i) {
+        if(i < 5){
         $('#frStatus2 .team-honor-list-row').each(function () {
           var url = $(this).find('.team-honor-list-name a').attr('href');
           var name = $(this).find('.team-honor-list-name a').text();
@@ -1066,7 +1069,7 @@
             amount + '</span></li>';
           $('.js__top-teams-list').append(teamData);
         });
-
+      }
       } // end loadTopTeamsRoster
 
       cd.loadTopCompaniesRoster = function () {
@@ -1080,6 +1083,7 @@
         var topCompaniesData = [];
         // Get the company name and URL from the hidden E42 top-companies S tag.
         $('.company-roster-row').each(function (i) {
+        if(i < 5){
           var url = $(this).find('a').attr('href');
           var name = $(this).find('a').text();
 
@@ -1089,6 +1093,7 @@
             "companyUrl": url,
             "companyName": name
           }
+        }
         });
 
         // Get the company raised amount from the default "Top Companies" list that appears on the greeting page
