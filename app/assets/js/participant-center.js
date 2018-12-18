@@ -8636,7 +8636,9 @@ START CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
   //MODERNIZER TOUCH ACCESS (***DO NOT EDIT***)
   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
  userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i) ? walk.dialogOverlayOpen('#pc-lightbox-mobile-apple') : userAgent.match(/Android/i) ? walk.dialogOverlayOpen('#pc-lightbox-mobile-android') : setTimeout(function() {
-  walk.dialogOverlayOpen('#pc-lightbox')
+  if($('#pc-lightbox').length > 0) {
+    walk.dialogOverlayOpen('#pc-lightbox')
+  }
  }, 1e3);
   //END MODERNIZER TOUCH ACCESS
   /*------------------------------------------------------------------------
@@ -11382,7 +11384,10 @@ console.log('hide subsequent popover');
         form: '#edit-personal-page-form', 
         callback: {
           success: function(response) {
-            hideLoading();
+            console.log('success updating personal page');
+            // hideLoading();
+            $('.js__pc-loading-modal').modal('hide');
+            $('.modal-backdrop').not('.js--popover-modal-backdrop').remove();
             scrollToTop();
             if(response.teamraiserErrorResponse) {
               var errorCode = response.teamraiserErrorResponse.code, 
@@ -11394,12 +11399,17 @@ console.log('hide subsequent popover');
               setEditorContent('#edit-personal-page-body', response.teamraiserErrorResponse.body);
             }
             else {
+              // hideLoading();
+              $('.js__pc-loading-modal').modal('hide');
+              $('.modal-backdrop').not('.js--popover-modal-backdrop').remove();
               $('#pc-edit-page-success').removeClass('hidden');
             }
             
           }, 
           error: function(response) {
-            hideLoading();
+            // hideLoading();
+            $('.js__pc-loading-modal').modal('hide');
+            $('.modal-backdrop').not('.js--popover-modal-backdrop').remove();
             if(handleApiError(response)) {
               adarda.trpc.ui.updatePageError(response.errorResponse.message);
             }
