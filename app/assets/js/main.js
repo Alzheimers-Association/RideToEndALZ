@@ -616,7 +616,7 @@
                     '</a></div>' +
                     '<div class="captain-name">Team Captain: ' + team.captainFirstName + ' ' + team.captainLastName + '</div>' +
                     ((team.companyName !== undefined) ? '<div class="team-company-name">' + team.companyName + '</div>' : '') +
-                    '</div><div class="col-xs-12 col-sm-3 d-flex align-items-center">' + '<a class="button btn-block btn-secondary" href="' + team.joinTeamURL + '&skip_login_page=true&s_captainConsId=' + team.captainConsId + '">JOIN</a></div></div>');
+                    '</div><div class="col-xs-12 col-sm-3 d-flex align-items-center">' + '<a class="button btn-block btn-secondary" href="' + team.joinTeamURL + '&skip_login_page=true&s_joinTeamID=' + team.id + '&s_captainConsId=' + team.captainConsId + '">JOIN</a></div></div>');
                   $('.js__search-tabs-container').hide();
                   $('.js__refine-search-container').show();
                   $('.js__search-results-container').slideDown();

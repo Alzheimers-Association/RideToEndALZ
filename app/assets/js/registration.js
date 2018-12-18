@@ -133,6 +133,9 @@
     if ($('#FriendraiserUserWaiver').length > 0) {
       // TR reg summary step
       // check registrants interactions and assign trRegNewAccountInteraction if they are logged in but do not have a trLoginInteraction OR a trLoggedInInteraction
+      if($('.js__reg-team-name').length){
+        $('.reg-summary-part-type').after('<div class="reg-summary-team-name"><div class="team-name-header-container clearfix"><span class="team-name-label option-label">Team Name: </span></div><div class="reg-team-name font-weight-bold">' + $('.js__reg-team-name').text() + '</div></div>');
+      }
       $('.reg-summary-option-info-container').removeClass('clearfix');
       cd.getInteraction(cd.trLoginInteractionID, cd.evID, getNewRegInteractionCallback1);
     }
