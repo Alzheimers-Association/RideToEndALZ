@@ -218,7 +218,6 @@
 
       // determine what kind of registation path has been chosen
       $('#team_find_registration_type_container').hide();
-
       // new, existing, none
       var frTmOpt = $('main').data('fr-tm-opt') ? $('main').data('fr-tm-opt') : null;
 
@@ -242,6 +241,7 @@
         $('form[name="FriendraiserFind"]').hide();
         $('.js__join-team-container').show();
         $('#team_find_registration_type_container').show();
+        $('.js__new-team-name').remove();
       }
 
       var showStartTeam = function () {
@@ -249,7 +249,11 @@
         $('.js__join-team-container').hide();
         $('form[name="FriendraiserFind"]').show();
         $('#team_find_registration_type_container').show();
-
+        // store new team name as session variable in order to populate on summary page
+        $('#team_find_new_team_name').prepend('<input type="hidden" class="js__new-team-name" name="s_newTeamName" />');
+        $('#fr_team_name').on('keyup', function(e){
+          $('.js__new-team-name').val($(this).val());
+        });
       }
 
       $('#friend_potion_next').text('NEXT');
