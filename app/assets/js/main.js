@@ -192,16 +192,33 @@
               });
               // manage case where someone is registered for more than 1 historic Ride but only 1 active Ride
               if(hasClosedEvents === true){
+                console.log('hasClosedEvents = true');
                 $('.js__has-events').attr('id', 'eventsAccordion').wrapInner("<div class='multiple-events'></div>");
                 $('.multiple-events').append(teamRaiserList);
               } else {
-                var singleFrId = trIDs[0];
-                var singleEventLink = 'TR?fr_id=' + singleFrId + '&pg=entry';
-                $('.js__has-events').addClass('single-event').append(teamRaiserList);
-                $('#collapse1').addClass('show');
-                $('#heading1 .fas').hide();
-                console.log('singleFrId: ', singleFrId);
-                $('.js__side-eventname').removeClass('collapsed').removeAttr('data-toggle').attr('href', singleEventLink);
+                console.log('hasClosedEvents = false');
+                if(totalTeamRaisers > 1){
+                  var singleFrId = trIDs[0];
+                  var singleEventLink = 'TR?fr_id=' + singleFrId + '&pg=entry';
+                  // $('.js__has-events').addClass('single-event').append(teamRaiserList);
+                  $('.js__has-events').attr('id', 'eventsAccordion').wrapInner("<div class='multiple-events'></div>");
+                  $('.multiple-events').append(teamRaiserList);
+  
+                  // $('#collapse1').addClass('show');
+                  // $('#heading1 .fas').hide();
+                  // console.log('singleFrId: ', singleFrId);
+                  // $('.js__side-eventname').removeClass('collapsed').removeAttr('data-toggle').attr('href', singleEventLink);
+                } else {
+                  var singleFrId = trIDs[0];
+                  var singleEventLink = 'TR?fr_id=' + singleFrId + '&pg=entry';
+                  $('.js__has-events').addClass('single-event').append(teamRaiserList);
+  
+                  $('#collapse1').addClass('show');
+                  $('#heading1 .fas').hide();
+                  console.log('singleFrId: ', singleFrId);
+                  $('.js__side-eventname').removeClass('collapsed').removeAttr('data-toggle').attr('href', singleEventLink);
+                }
+               
               }
 
             } else if (teamraisers.length == 1 && teamraisers[0].status !== '0' && teamraisers[0].status !== '4' && teamraisers[0].status !== '8') {
