@@ -21,7 +21,7 @@
     // BEGIN default Walk login code
     var pageHeight = document.body.scrollHeight;
     var pageWidth = $(window).width();
-    
+
     if(pageHeight > 1080 && pageWidth > 992){
       $('#back_to_top').removeClass('d-md-none');
     }
@@ -34,7 +34,7 @@
         $(this).find('.dropdown-menu').stop(true, true).fadeOut(150);
       });
     }
-    
+
     var sessionTRID = "";
     var trIDs = [];
     if (luminateExtend.global.auth.token == null) {
@@ -132,7 +132,7 @@
 
               /* If registered for more than 1 walks */
               console.log('registered for more than 1 event');
-              
+
               var totalTeamRaisers = 0;
               var hasClosedEvents = false;
               var teamRaiserList = '';
@@ -203,7 +203,7 @@
                   // $('.js__has-events').addClass('single-event').append(teamRaiserList);
                   $('.js__has-events').attr('id', 'eventsAccordion').wrapInner("<div class='multiple-events'></div>");
                   $('.multiple-events').append(teamRaiserList);
-  
+
                   // $('#collapse1').addClass('show');
                   // $('#heading1 .fas').hide();
                   // console.log('singleFrId: ', singleFrId);
@@ -212,13 +212,13 @@
                   var singleFrId = trIDs[0];
                   var singleEventLink = 'TR?fr_id=' + singleFrId + '&pg=entry';
                   $('.js__has-events').addClass('single-event').append(teamRaiserList);
-  
+
                   $('#collapse1').addClass('show');
                   $('#heading1 .fas').hide();
                   console.log('singleFrId: ', singleFrId);
                   $('.js__side-eventname').removeClass('collapsed').removeAttr('data-toggle').attr('href', singleEventLink);
                 }
-               
+
               }
 
             } else if (teamraisers.length == 1 && teamraisers[0].status !== '0' && teamraisers[0].status !== '4' && teamraisers[0].status !== '8') {
@@ -847,13 +847,13 @@
               };
             });
           }
-          // } 
+          // }
         });
 
     }
 
     // #################
-    // PAGEBUILDER PAGES 
+    // PAGEBUILDER PAGES
     // #################
     if ($('body').is('.pg_ride_homepage')) {
       // home page scripts
@@ -996,7 +996,7 @@
 
 
     // ########
-    // TR PAGES 
+    // TR PAGES
     // ########
 
     cd.runThermometer = function (raised, goal) {
@@ -1075,18 +1075,22 @@
         });
       } // end loadTopParticipantsRoster
 
-      cd.loadTopTeamsRoster = function (i) {
-        if(i < 5){
-        $('#frStatus2 .team-honor-list-row').each(function () {
-          var url = $(this).find('.team-honor-list-name a').attr('href');
-          var name = $(this).find('.team-honor-list-name a').text();
-          var amount = $(this).find('.team-honor-list-value').text();
-          var teamData = '<li class="list-group-item"><a class="roster-name" href="' + url +
+      cd.loadTopTeamsRoster = function () {
+
+        $('#frStatus2 .team-honor-list-row').each(function (i) {
+          if(i < 5){
+            var url = $(this).find('.team-honor-list-name a').attr('href');
+            var name = $(this).find('.team-honor-list-name a').text();
+            var amount = $(this).find('.team-honor-list-value').text();
+            var teamData = '<li class="list-group-item"><a class="roster-name" href="' + url +
             '">' + name + '</a><span class="roster-amt">' +
             amount + '</span></li>';
-          $('.js__top-teams-list').append(teamData);
+            if (url !== undefined) {
+              $('.js__top-teams-list').append(teamData);
+            }
+          }
         });
-      }
+
       } // end loadTopTeamsRoster
 
       cd.loadTopCompaniesRoster = function () {
@@ -1153,7 +1157,7 @@
       //   $('.js__calendar-menu-ride-day').toggle();
       // });
       $('.js__greeting-intro').html($('#fr_html_container').html());
-      
+
     }
 
     if ($('body').is('.pg_personal')) {
@@ -1391,7 +1395,7 @@
       $('.disclaimer').parent().css('width', '100%');
       $('.show-mobile').parent().css('width', '100%');
 
-      // set autocomplete to organization for employer name field 
+      // set autocomplete to organization for employer name field
       $('#donor_matching_employersearchname').attr('autocomplete', 'organization');
 
       /* update input types for HTML5 mobile device UX */
@@ -1524,9 +1528,9 @@
       }
     }
 
-    // ########## 
-    // API SURVEY 
-    // ########## 
+    // ##########
+    // API SURVEY
+    // ##########
     if ($('.survey-form').length > 0) {
 
     }

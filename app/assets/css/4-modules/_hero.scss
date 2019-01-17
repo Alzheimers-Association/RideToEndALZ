@@ -45,6 +45,9 @@
         text-decoration: none;
       }
     }
+    .fa-clock {
+        margin-right: 6px;
+    }
   } // .btn-lg {
   @include media-breakpoint-down(md) {
     .jumbotron {
@@ -68,5 +71,5 @@
     .hero-link-container {
       margin-top: 0.5rem;
     }
-  } 
+  }
 }
