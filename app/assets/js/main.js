@@ -1129,9 +1129,9 @@
 
         // Now that all data is in a single array, iterate through that array to build our custom top companies leaderboard
         $(topCompaniesData).each(function (i) {
-          var companyData = '<li class="list-group-item"><a class="roster-name" href="' + $(this)[i].companyUrl +
-            '">' + $(this)[i].companyName + '</a><span class="roster-amt">' +
-            $(this)[i].companyAmt + '</span></li>';
+          var companyData = '<li class="list-group-item"><a class="roster-name" href="' + $(topCompaniesData)[i].companyUrl +
+            '">' + $(topCompaniesData)[i].companyName + '</a><span class="roster-amt">' +
+            $(topCompaniesData)[i].companyAmt + '</span></li>';
           $('.js__top-companies-list').append(companyData);
         });
       } // end loadTopCompaniesRoster
