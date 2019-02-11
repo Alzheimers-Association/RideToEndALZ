@@ -9261,7 +9261,7 @@ END CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
         $('#pc-nav-notifications').popover('toggle');
       }
     });
-    
+
     /* handle view change links */
     /* any link with className "load-view" will load the view specified by the href attribute */
     $('body').on('click', '.load-view', function(e) {
@@ -11886,12 +11886,16 @@ console.log('hide subsequent popover');
     /* handle email your team button */
     $('.email-team-members').click(function(e) {
       e.preventDefault();
-      
       $('#pc2EmailSection').addClass('show');
       $('#pc-email-view').addClass('email_rpt_show_teammates');
       adarda.trpc.view('pc-email');
-      setTimeout(function(){$.scrollTo($('#pc2EmailSection'), {axis: 'y', duration: 800, easing: 'swing'});}, 300);
-      
+      setTimeout(function(){
+        $.scrollTo($('#pc2EmailSection'), {axis: 'y', duration: 800, easing: 'swing'});
+      }, 300);
+      setTimeout(function(){
+        $('#email-contacts-modal').modal('show');
+        $('.js--email-contacts-filter').val('email_rpt_show_teammates');
+      }, 1000);
       return false;
     });
 
