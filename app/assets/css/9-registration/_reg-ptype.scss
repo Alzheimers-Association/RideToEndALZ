@@ -16,12 +16,11 @@
     // }
   }
 #part_type_section_container {
-  .section-sub-header {
+  .section-sub-header,
+  .part-type-name-value-separator,
+  .part-type-fee-text  {
     display:none;
   }
-  // .section-header-text {
-  //   text-transform:uppercase;
-  // }
 }
   .donation-level-container {
    float:none;
@@ -130,17 +129,25 @@
         left: -.5rem;
         display: block;
       }
-      .part-type-name,
-      .part-type-name-value-separator,
-      .part-type-fee-text {
+      .part-type-name {
         font-size:1.4rem;
-        font-weight:800;
+        font-weight:500;
         color:$white;
       }
+      .ptype-subhead {
+        font-size:1rem;
+        font-weight:400;
+        text-transform:none;
+        color:$white;
+      }
+      .ptype-subhead,
       .part-type-name {
         display: inline-block;
-        padding-bottom: 0.5rem;
         padding-left:0.75rem;
+      }
+      .ptype-subhead{
+        padding-bottom: 0.5rem;
+        display: block;
       }
       .part-type-description-text {
         background:#f7f7f7;
@@ -166,6 +173,27 @@
           font-weight:400;
           font-size: 14px;
         } 
+      }
+      .ptype-collapse-link {
+        text-align:center;
+        background:#186B63;
+        color:$white;
+        display:block;
+        margin: 0 -0.75rem -0.70rem -0.75rem;
+        &.collapsed {
+          .fa-caret-up {
+            display:none;
+          }
+          .fa-caret-down {
+            display:inline-block;
+          }
+        }
+        .fa-caret-up {
+          display:inline-block;
+        }
+        .fa-caret-down {
+          display:none;
+        }
       }
       // @include media-breakpoint-down(sm) {
       //   input {
