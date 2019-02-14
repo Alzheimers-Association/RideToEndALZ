@@ -73,6 +73,7 @@
   }
   
   div.part-type-container {
+    display:none;
     position:relative;
     min-height: 1.5rem;
     padding: 1rem 0 1rem 1.5rem;
@@ -150,6 +151,7 @@
         display: block;
       }
       .part-type-description-text {
+        // display:none;
         background:#f7f7f7;
         height:100%;
         position:relative;

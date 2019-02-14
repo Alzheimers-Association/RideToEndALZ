@@ -479,7 +479,7 @@
 
         $(this).html(newPtypeText);
       });
-
+      $('.part-type-container').addClass('d-block');
 
       $('#part_type_additional_gift_container').before('<div class="section-header" id="part_type_section_header"><div><span class="section-header-text text-uppercase">Did you know?</span></div></div><div class="bg-primary stripe-overlay text-white text-center text-uppercase h2 py-5 mt-3 did-you-know-text"><div class="col-md-8 offset-md-2">Every 65 seconds, someone in the United States develops Alzheimer\'s disease.</div></div>');
       $('#part_type_additional_gift_section_header').addClass("col-md-12").html("<p>As the world's largest nonprofit funder of Alzheimer's disease research, the Alzheimer's Association is setting the pace of the field with innovation and investment - and you're setting the pace with each pedal stroke.</p><p><strong>Would you like to make a $65 self-donation now</strong> to set your fundraising pace and breakaway from the pack?</p>");
