@@ -8674,7 +8674,8 @@ END CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
   }
 
   if($('#pc-container').data('daystoevent') === 30) {
-    walk.dialogOverlayOpen('#fundraising-progress-dialog');
+    // TODO - update the copy for this modal in reus_ridepc_modals before turning it on again
+    // walk.dialogOverlayOpen('#fundraising-progress-dialog');
   }
   /* init text editors */
   $('.jquery-text-editor').jqte({

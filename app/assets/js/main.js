@@ -171,7 +171,7 @@
                     '</div>' +
                     '<div id="collapse' + i + '" class="collapse" aria-labelledby="heading' + i + '" data-parent="#eventsAccordion">' +
                     '<div class="card-body">' +
-                    '<p>' + daysToEvent + '</p>' +
+                    // '<p>' + daysToEvent + '</p>' +
                     '<hr>' +
                     '<ul class="nav flex-column"><li class="nav-item pushy-link"><a class="nav-link js__side-dashboard" href="SPageServer?pagename=ridepc&pc2_page=pc-dashboard&fr_id=' + trId + '">Dashboard</a></li>' +
                     '<li class="nav-item pushy-link"><a class="nav-link js__side-mypage" href="SPageServer?pagename=ridepc&pc2_page=pc-edit-page&fr_id=' + trId + '">My Page</a></li>' +
@@ -250,7 +250,7 @@
                 eventLocation +
                 '</div>' +
                 '<div class="card-body">' +
-                '<p>' + daysToEvent + '</p>' +
+                // '<p>' + daysToEvent + '</p>' +
                 '<hr>' +
                 '<ul class="nav flex-column"><li class="nav-item pushy-link"><a class="nav-link js__side-dashboard" href="SPageServer?pagename=ridepc&pc2_page=pc-dashboard&fr_id=' + trId + '">Dashboard</a></li>' +
                 '<li class="nav-item pushy-link"><a class="nav-link js__side-mypage" href="SPageServer?pagename=ridepc&pc2_page=pc-edit-page&fr_id=' + trId + '">My Page</a></li>' +
