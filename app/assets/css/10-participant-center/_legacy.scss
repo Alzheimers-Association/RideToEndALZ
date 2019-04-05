@@ -5682,6 +5682,8 @@ border-color: #d9534f;
 /* trust seals */
 }
 .app-9 div.responsive input[type="text"].form-control,
+.app-9 div.responsive input[type="tel"].form-control,
+.app-9 div.responsive input[type="email"].form-control,
 .app-9 div.responsive input[type="number"].form-control,
 .app-9 div.responsive input[type="password"].form-control,
 .app-9 div.responsive textarea.form-control {
@@ -5909,6 +5911,8 @@ font-weight: 500;
 border-top: 1px solid #e1e2e1;
 padding-top: 20px;
 }
+div.responsive input[type="text"],
+div.responsive input[type="tel"],
 div.responsive input[type="text"],
 div.responsive input[type="number"],
 div.responsive input[type="password"],
