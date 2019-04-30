@@ -60,7 +60,7 @@
         });
 
         /* make form fields responsive */
-        $surveyForm.find('input[type="text"], input[type="number"], input[type="password"], textarea, select').not('#denySubmit').each(function () {
+        $surveyForm.find('input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="password"], textarea, select').not('#denySubmit').each(function () {
           var $field = $(this).addClass('form-control').wrap('<div class="form-group ' +
               $(this).attr('id') +
               '_container" />'),

@@ -35,6 +35,8 @@ form[name="FriendraiserFind"]{
 .app_tr_registration {
 
   div#team_find_new_team_attributes input[type="text"],
+  div#team_find_new_team_attributes input[type="tel"],
+  div#team_find_new_team_attributes input[type="email"],
   div#team_find_new_team_attributes input[type="password"],
   div#team_find_new_team_company #fr_division_name .mobile div.registration-page-container select,
   .mobile select#matchingAddresses {
