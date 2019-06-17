@@ -4155,7 +4155,7 @@
       if($('.sponsors-event').length > 0) {
         $.ajax({
           dataType: 'html', 
-          url: luminateExtend.global.path.nonsecure + 
+          url: luminateExtend.global.path.secure + 
                'TR?pg=informational&fr_id=' + luminateExtend.global.frId + 
                '&type=fr_informational&sid=1012&pgwrap=n', 
           success: function(response) {
@@ -7696,7 +7696,7 @@ var photoEditor, dtContacts;
           success: function(response) {
             var shortcutItem = response.getShortcutResponse.shortcutItem, 
             shortcutUrl = shortcutItem.url || 
-                          (luminateExtend.global.path.nonsecure + 
+                          (luminateExtend.global.path.secure + 
                            'TR?fr_id=' + adarda.trpc.frId + 
                            '&pg=personal&px=' + adarda.trpc.cons.profile.id);
             $('#edit-page-url').html(shortcutUrl);
@@ -7753,7 +7753,7 @@ var photoEditor, dtContacts;
             success: function(response) {
               var shortcutItem = response.getTeamShortcutResponse.shortcutItem, 
               shortcutUrl = shortcutItem.url || 
-                            (luminateExtend.global.path.nonsecure + 
+                            (luminateExtend.global.path.secure + 
                              'TR?fr_id=' + adarda.trpc.frId + 
                              '&pg=team&team_id=' + adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].teamId);
               $('#edit-team-page-url').html(shortcutUrl);
@@ -7784,7 +7784,7 @@ var photoEditor, dtContacts;
             success: function(response) {
               var shortcutItem = response.getCompanyShortcutResponse.shortcutItem, 
               shortcutUrl = shortcutItem.url || 
-                            (luminateExtend.global.path.nonsecure + 
+                            (luminateExtend.global.path.secure + 
                              'TR?fr_id=' + adarda.trpc.frId + 
                              '&pg=' + 
                              (adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].companyInformation.companyType === 'LOCAL' ? 'company' : 'national_company') + 
@@ -8443,6 +8443,21 @@ var photoEditor, dtContacts;
       $(window).scrollTop($(currentHash).offset().top)
                .scrollLeft($(currentHash).offset().left);
     }
+    if(viewName === 'pc-social'){
+      //console.log("here is social");
+      if (!jQuery('#social-tab-tab iframe').length > 0) {
+        //console.log("Social does NOT exist");
+        var bfSocialVars = new Object();
+        var bfDataSet = window.parent.document.getElementById('social-tab-tab');
+        bfSocialVars.bfConsId = adarda.trpc.cons.profile.id;
+        bfSocialVars.bfFrId = adarda.trpc.frId;
+        bfSocialVars.bfAcct = "alzaride";
+        bfSocialVars.bfauth = bfDataSet.dataset.bfauth;
+        bfSocialVars.bfsession = bfDataSet.dataset.bfsession;
+        //console.log(bfSocialVars);
+        jQuery('#social-tab-tab').append('<iframe title="Boundless Fundraising Social App" src="https://bfapps1.boundlessfundraising.com/applications/'+bfSocialVars.bfAcct+'/social/app/ui/#/addsocial/'+bfSocialVars.bfConsId+'/'+bfSocialVars.bfFrId+'/'+bfSocialVars.bfauth+'/'+bfSocialVars.bfsession+'/?source=PCSocial" style="width:100%;height:1000px;border:1px solid #cccccc;"></iframe>');
+      }
+    }
   })
   /* logout event */
   .on('logout', function() {
@@ -8528,7 +8543,7 @@ var photoEditor, dtContacts;
         success: function(response) {
           var shortcutItem = response.getShortcutResponse.shortcutItem, 
           shortcutUrl = shortcutItem.url || 
-                        (luminateExtend.global.path.nonsecure + 
+                        (luminateExtend.global.path.secure + 
                          'TR?fr_id=' + adarda.trpc.frId + 
                          '&pg=personal&px=' + adarda.trpc.cons.profile.id);
           $('#pc-email-view .js__personal-page-link').html('<a href="' + shortcutUrl + '">' + shortcutUrl + '</a>');
@@ -8615,7 +8630,7 @@ var photoEditor, dtContacts;
         success: function(response) {
           var shortcutItem = response.getShortcutResponse.shortcutItem, 
           shortcutUrl = shortcutItem.url || 
-                        (luminateExtend.global.path.nonsecure + 
+                        (luminateExtend.global.path.secure + 
                          'TR?fr_id=' + adarda.trpc.frId + 
                          '&pg=personal&px=' + adarda.trpc.cons.profile.id);
           $('#edit-page-url').html(shortcutUrl);
@@ -8654,7 +8669,7 @@ END CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
         success: function(response) {
           var shortcutItem = response.getShortcutResponse.shortcutItem, 
           shortcutUrl = shortcutItem.url || 
-                        (luminateExtend.global.path.nonsecure + 
+                        (luminateExtend.global.path.secure + 
                          'TR?fr_id=' + adarda.trpc.frId + 
                          '&pg=personal&px=' + adarda.trpc.cons.profile.id);
           $('#thanks-edit-page-url').html(shortcutUrl);
@@ -8804,7 +8819,7 @@ END CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
             success: function(response) {
               var shortcutItem = response.getTeamShortcutResponse.shortcutItem, 
               shortcutUrl = shortcutItem.url || 
-                            (luminateExtend.global.path.nonsecure + 
+                            (luminateExtend.global.path.secure + 
                              'TR?fr_id=' + adarda.trpc.frId + 
                              '&pg=team&team_id=' + adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].teamId);
               $('#thanks-edit-team-page-url').html(shortcutUrl);
@@ -10009,23 +10024,23 @@ console.log('hide subsequent popover');
                                        .replace(/\[EVENT LOCATION NAME\]/g, 
                                                 adarda.trpc.teamraiser['tr'+adarda.trpc.frId].locationName)
                                        .replace(/\[PARTICIPANT PERSONAL PAGE LINK\]/g, 
-                                                '<a href="' + luminateExtend.global.path.nonsecure + 
+                                                '<a href="' + luminateExtend.global.path.secure + 
                                                 'TR?fr_id=' + adarda.trpc.frId + 
                                                 '&pg=personal&px=' + adarda.trpc.cons.profile.id + '">')
                                        .replace(/\[END LINK\]/g, '</a>')
                                        .replace(/\[PERSONALIZED VIDEO URL\]/g, 
-                                                luminateExtend.global.path.nonsecure + 
+                                                luminateExtend.global.path.secure + 
                                                 'TR?fr_id=' + adarda.trpc.frId + 
                                                 '&pg=personal&px=' + adarda.trpc.cons.profile.id + 
                                                 '&r={recipientName}&play=1')
                                        .replace(/\[TEAM NAME\]/g, adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].teamName)
                                        .replace(/\[TEAM PAGE LINK\]/g, 
-                                                '<a href="' + luminateExtend.global.path.nonsecure + 
+                                                '<a href="' + luminateExtend.global.path.secure + 
                                                 'TR?fr_id=' + adarda.trpc.frId + 
                                                 '&pg=team&team_id=' + 
                                                 adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].teamId + '">')
                                        .replace(/\[TEAM PAGE LINK TEXT\]/g, 
-                                                luminateExtend.global.path.nonsecure + 
+                                                luminateExtend.global.path.secure + 
                                                 'TR?fr_id=' + adarda.trpc.frId + 
                                                 '&pg=team&team_id=' + 
                                                 adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].teamId)
@@ -11040,10 +11055,10 @@ console.log('hide subsequent popover');
               $('.viewPagePersonal').attr('href',shortcutUrl);
             }
             else {
-              $('#edit-page-url').html(luminateExtend.global.path.nonsecure + 
+              $('#edit-page-url').html(luminateExtend.global.path.secure + 
                                        'TR?fr_id=' + adarda.trpc.frId + 
                                        '&pg=personal&px=' + adarda.trpc.cons.profile.id);
-              $('.viewPagePersonal').attr('href',luminateExtend.global.path.nonsecure + 
+              $('.viewPagePersonal').attr('href',luminateExtend.global.path.secure + 
                                        'TR?fr_id=' + adarda.trpc.frId + 
                                        '&pg=personal&px=' + adarda.trpc.cons.profile.id);
             }
@@ -11439,11 +11454,11 @@ console.log('hide subsequent popover');
               $('.viewPageTeam').attr('href',shortcutUrl);
             }
             else {
-              $('#edit-team-page-url').html(luminateExtend.global.path.nonsecure + 
+              $('#edit-team-page-url').html(luminateExtend.global.path.secure + 
                                             'TR?fr_id=' + adarda.trpc.frId + 
                                             '&pg=team&team_id=' + 
                                             adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].teamId);
-              $('.viewPageTeam').attr('href',luminateExtend.global.path.nonsecure + 
+              $('.viewPageTeam').attr('href',luminateExtend.global.path.secure + 
                                             'TR?fr_id=' + adarda.trpc.frId + 
                                             '&pg=team&team_id=' + 
                                             adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].teamId);
@@ -11930,7 +11945,7 @@ console.log('hide subsequent popover');
               $('#edit-company-page-url').html(shortcutUrl);
             }
             else if (adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId]) {
-              $('#edit-company-page-url').html(luminateExtend.global.path.nonsecure + 
+              $('#edit-company-page-url').html(luminateExtend.global.path.secure + 
                                                'TR?fr_id=' + adarda.trpc.frId + 
                                                '&pg=' + 
                                                (adarda.trpc.teamraiserRegistration['tr'+adarda.trpc.frId].companyInformation.companyType === 'LOCAL' ? 'company' : 'national_company') + 
